@@ -10,19 +10,18 @@ namespace Schedulo.Command
     internal class DelegateCommand : ICommand
     {
         private readonly Action<object> _executeAction;
-        private readonly Func<object, object> _canExecuteAction;
-
+        private readonly Func<object, bool> canExecute;
         public event EventHandler CanExecuteChanged;
 
-        public DelegateCommand(Action<object> executeAction, Func<object, object> canExecuteAction)
+        public DelegateCommand(Action<object> executeAction, Func<object, bool> canExecuted)
         {
             _executeAction = executeAction;
-            _canExecuteAction = canExecuteAction;
+            this.canExecute = canExecuted;
         }
 
         public bool CanExecute(object parameter)
         {
-            return (bool)(_canExecuteAction?.Invoke(parameter));
+            return (bool)(canExecute?.Invoke(parameter));
         }
 
         public void Execute(object parameter)
@@ -30,7 +29,7 @@ namespace Schedulo.Command
             _executeAction(parameter);
         }
 
-        public void InvokeCanExecuteChanged()
+        public void OnCanExecuteChanged()
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
