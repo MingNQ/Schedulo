@@ -1,6 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-<!--#region TextColor -->
+    <!--common-->
+    <SolidColorBrush x:Key="WhiteColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="GrayColor" Color="#ccc"/>
+    <SolidColorBrush x:Key="LightBlack" Color="#161616"/>
+
+    <!--#region TextColor -->
     <SolidColorBrush x:Key="HeaderText" Color="#181818"/>
-<!--#endregion-->
+    <SolidColorBrush x:Key="SignUpText" Color="#4F75FF"/>
+
+    <!--#endregion-->
+    
+    <!--Button Submit-->
+    <SolidColorBrush x:Key="ButtonSubmitNormalBackground" Color="#4F75FF"/>
+    <SolidColorBrush x:Key="ButtonSubmitForeground" Color="#F8FAFC"/>
+
+     <!--Button Link-->
+    <SolidColorBrush x:Key="ButtonLinkBackground" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="ButtonLinkForeground" Color="#181818"/>
+    <SolidColorBrush x:Key="ButtonLinkHoverBackground" Color="#E0E0E0"/>
+    <SolidColorBrush x:Key="ButtonLinkHoverForeground" Color="#282828"/>
+    <SolidColorBrush x:Key="ButtonLinkPressBackground" Color="#A0A0A0"/>
+    <SolidColorBrush x:Key="ButtonLinkPressForeground" Color="#383838"/>
 </ResourceDictionary>

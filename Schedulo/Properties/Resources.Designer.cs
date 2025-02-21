@@ -61,11 +61,157 @@ namespace Schedulo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Google_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Google_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Microsoft_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Microsoft_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Become a member of Schedulo.
+        /// </summary>
+        public static string R01 {
+            get {
+                return ResourceManager.GetString("R01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your email.
+        /// </summary>
+        public static string R02 {
+            get {
+                return ResourceManager.GetString("R02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter password.
+        /// </summary>
+        public static string R03 {
+            get {
+                return ResourceManager.GetString("R03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        public static string R04 {
+            get {
+                return ResourceManager.GetString("R04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start with Google.
+        /// </summary>
+        public static string R05 {
+            get {
+                return ResourceManager.GetString("R05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start with Microsoft.
+        /// </summary>
+        public static string R06 {
+            get {
+                return ResourceManager.GetString("R06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already a member?.
+        /// </summary>
+        public static string R07 {
+            get {
+                return ResourceManager.GetString("R07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login here.
+        /// </summary>
+        public static string R07_1 {
+            get {
+                return ResourceManager.GetString("R07_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login to your Schedulo Account.
         /// </summary>
         public static string S01 {
             get {
                 return ResourceManager.GetString("S01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your email.
+        /// </summary>
+        public static string S02 {
+            get {
+                return ResourceManager.GetString("S02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        public static string S03 {
+            get {
+                return ResourceManager.GetString("S03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue with Google.
+        /// </summary>
+        public static string S04 {
+            get {
+                return ResourceManager.GetString("S04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue with Microsoft.
+        /// </summary>
+        public static string S05 {
+            get {
+                return ResourceManager.GetString("S05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t have an account? .
+        /// </summary>
+        public static string S06 {
+            get {
+                return ResourceManager.GetString("S06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up for free.
+        /// </summary>
+        public static string S07 {
+            get {
+                return ResourceManager.GetString("S07", resourceCulture);
             }
         }
     }

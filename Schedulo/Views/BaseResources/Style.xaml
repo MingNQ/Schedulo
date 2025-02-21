@@ -4,11 +4,91 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Base.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
+    
     <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="24px"/>
+        <Setter Property="FontSize" Value="32px"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource HeaderText}"/>
+    </Style>
+
+    <!--Input Text Box Style-->
+    <Style x:Key="InputTextStyle" TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border CornerRadius="5"
+                            Background="{StaticResource WhiteColor}"
+                            BorderBrush="{StaticResource GrayColor}"
+                            BorderThickness="1"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer Margin="4" x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Height" Value="36px"/>
+        <Setter Property="Padding" Value="0 3 0 0"/>
+        <Setter Property="Margin" Value="0 0 0 16"/>
+    </Style>
+    
+    <!--Custom Button Submit-->
+    <Style x:Key="ButtonSubmitStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Height" Value="36px"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBlack}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonSubmitNormalBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource ButtonSubmitForeground}"/>
+        <Setter Property="FontSize" Value="16px"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="ButtonLinkStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Height" Value="36px"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBlack}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonLinkBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource ButtonLinkForeground}"/>
+        <Setter Property="FontSize" Value="16px"/>
+        <Setter Property="Margin" Value="0 0 0 18"/>
+        <Style.Triggers>
+            
+        </Style.Triggers>
+    </Style>
+    
+    <!-- Custom line -->
+    <Style x:Key="LineStyle" TargetType="Line">
+        <Setter Property="X1" Value="0"/>
+        <Setter Property="Y1" Value="0"/>
+        <Setter Property="X2" Value="1"/>
+        <Setter Property="Y2" Value="0"/>
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Stroke" Value="{StaticResource GrayColor}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>
