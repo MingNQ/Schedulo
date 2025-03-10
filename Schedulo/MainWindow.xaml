@@ -4,11 +4,53 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schedulo"
+        xmlns:vm="clr-namespace:Schedulo.ViewModels"
+        xmlns:resources="clr-namespace:Schedulo.Properties"
+        xmlns:views="clr-namespace:Schedulo.Views.DateView"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="Schedulo" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen">
+    
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64px"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="1">
+                <Button 
+                    Style="{StaticResource ButtonCreateStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image 
+                            Width="24px" Height="24px"
+                            Margin="0 0 18 0"
+                            Source="pack://application:,,,/Schedulo;component/Resources/add_icon.png"/>
+                        <TextBlock 
+                            Text="{x:Static resources:Resources.H01}" 
+                            FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>    
+        </Grid>
+
+        <StackPanel Grid.Column="1" Margin="0 0 10 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <views:DateWithMonthView 
+                    Grid.Row="1" 
+                    DataContext="{Binding MonthViewModel}"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

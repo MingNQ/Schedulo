@@ -71,6 +71,15 @@ namespace Schedulo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string H01 {
+            get {
+                return ResourceManager.GetString("H01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Microsoft_Logo {

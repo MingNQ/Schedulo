@@ -1,5 +1,6 @@
 ﻿using Schedulo.Common;
 using Schedulo.Models;
+using Schedulo.ViewModels;
 using Schedulo.Views;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,11 @@ namespace Schedulo
             }
 
             MainWindow mainWindow = new MainWindow();
+            MainViewModel mainViewModel = new MainViewModel();
             WindowManger windowManger = new WindowManger();
             windowManger.Window = mainWindow;
 
+            mainWindow.DataContext = mainViewModel;
             mainWindow.Show();
 
             LoginView loginView = new LoginView();

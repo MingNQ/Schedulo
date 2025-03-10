@@ -91,4 +91,36 @@
         <Setter Property="StrokeThickness" Value="1"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+    
+    <!-- Custom Button Create-->
+    <Style x:Key="ButtonCreateStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="15"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1">
+
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200px"/>
+        <Setter Property="Height" Value="48px"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GrayColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource LightBlack}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="FontSize" Value="18px"/>
+    </Style>
+    
+    <!-- Custom Border Cell Day-->
+    <Style x:Key="BorderCellDay" TargetType="Border">
+        <Setter Property="Width" Value="144px"/>
+        <Setter Property="Height" Value="100px"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GrayColor}"/>
+        <Setter Property="BorderThickness" Value="1px"/>
+    </Style>
 </ResourceDictionary>

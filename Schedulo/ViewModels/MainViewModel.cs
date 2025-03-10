@@ -10,6 +10,13 @@ namespace Schedulo.ViewModels
 {
     internal class MainViewModel : ViewModelBase
     {
+        public MonthViewModel MonthViewModel { get; set; }
+        
+        public MainViewModel()
+        {
+            MonthViewModel = new MonthViewModel();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (this.Disposed)
