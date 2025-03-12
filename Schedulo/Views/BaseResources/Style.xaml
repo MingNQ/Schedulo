@@ -123,4 +123,25 @@
         <Setter Property="BorderBrush" Value="{StaticResource GrayColor}"/>
         <Setter Property="BorderThickness" Value="1px"/>
     </Style>
+    
+    
+    <!--Custom Text Display Day in Week View-->
+    <Style x:Key="TextDayInWeek" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16px"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0 8"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="ScrollableItemsControl" TargetType="ItemsControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

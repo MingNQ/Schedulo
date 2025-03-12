@@ -17,7 +17,7 @@
 
             <UniformGrid Columns="7">
                 <Border BorderBrush="{StaticResource GrayColor}" BorderThickness="1px">
-                    <TextBlock Text="MON" HorizontalAlignment="Center"/>
+                    <TextBlock Text="SUN" HorizontalAlignment="Center"/>
                 </Border>
                 
                 <Border BorderBrush="{StaticResource GrayColor}" BorderThickness="1px">

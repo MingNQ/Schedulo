@@ -10,13 +10,14 @@ namespace Schedulo.ViewModels
     public class DayViewModel
     {
         public DateTime Date { get; set; }
-        public ObservableCollection<EventViewModel> Events { get; } = new ObservableCollection<EventViewModel>();
+        public DateTime Hour { get; set; }
+        public ObservableCollection<EventViewModel> Events { get; set; } = new ObservableCollection<EventViewModel>();
     }
 
     public class EventViewModel
     {
         public string Name { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
-
-    
 }

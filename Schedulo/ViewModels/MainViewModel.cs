@@ -11,12 +11,18 @@ namespace Schedulo.ViewModels
     internal class MainViewModel : ViewModelBase
     {
         public MonthViewModel MonthViewModel { get; set; }
+        public WeekViewModel WeekViewModel { get; set; }
         
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public MainViewModel()
         {
             MonthViewModel = new MonthViewModel();
+            WeekViewModel = new WeekViewModel();
         }
 
+        #region Protected Methods
         protected override void Dispose(bool disposing)
         {
             if (this.Disposed)
@@ -27,9 +33,14 @@ namespace Schedulo.ViewModels
             if (disposing)
             {
                 // TO-DO: Dispose
+                if (MonthViewModel != null)
+                {
+                    MonthViewModel.Dispose();
+                }
             }
 
             base.Dispose(disposing);
         }
+        #endregion
     }
 }

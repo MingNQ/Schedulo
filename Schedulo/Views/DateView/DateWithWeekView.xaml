@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Schedulo.Views.DateView.DateWithWeekView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:Schedulo.Views.DateView"
+             mc:Ignorable="d" 
+             d:DesignHeight="640" d:DesignWidth="1008">
+    <Border CornerRadius="4" BorderThickness="2" BorderBrush="{StaticResource GrayColor}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="64px"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock 
+                    Text="{Binding Gmt}"
+                    Grid.Column="0"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"/>
+
+                <ItemsControl Grid.Column="1" ItemsSource="{Binding Days}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="7"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource GrayColor}" BorderThickness="1px">
+                                <StackPanel>
+                                    <TextBlock 
+                                        Text="{Binding Date, StringFormat='{}{0:ddd}'}"
+                                        HorizontalAlignment="Center"/>
+
+                                    <TextBlock 
+                                        Text="{Binding Date, StringFormat='{}{0:dd}'}"
+                                        Style="{StaticResource TextDayInWeek}"/>
+
+                                    <ItemsControl ItemsSource="{Binding Events}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="LightBlue" CornerRadius="5" Padding="2" Margin="2">
+                                                    <TextBlock Text="{Binding Name}" FontSize="12"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+            <ScrollViewer 
+                    Grid.Row="1"
+                    VerticalScrollBarVisibility="Hidden" 
+                    Height="550">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="ScrollChanged">
+                        <i:InvokeCommandAction Command="{Binding ScrollCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="64px"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ItemsControl Grid.Column="0" ItemsSource="{Binding HourBlocks}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{StaticResource GrayColor}" BorderThickness="1px" Height="64px">
+                                    <TextBlock 
+                                            Text="{Binding Hour, StringFormat='{}{0:h tt}'}"
+                                            VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <ItemsControl Grid.Column="1" ItemsSource="{Binding TimeSlots}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="7"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{StaticResource GrayColor}" BorderThickness="0.5" Height="64px">
+
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>
