@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Schedulo.Command
 {
-    internal class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private readonly Action<object> _executeAction;
         private readonly Func<object, bool> canExecute;

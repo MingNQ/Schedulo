@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Schedulo.ViewModels
 {
-    internal class ViewModelBase : INotifyPropertyChanged, IDisposable
+    public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         public bool Disposed;
 

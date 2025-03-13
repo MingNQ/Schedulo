@@ -12,6 +12,8 @@ namespace Schedulo.ViewModels
     {
         public MonthViewModel MonthViewModel { get; set; }
         public WeekViewModel WeekViewModel { get; set; }
+        public DayViewModel DayViewModel {  get; set; }
+        
         
         /// <summary>
         /// Constructor
@@ -20,6 +22,7 @@ namespace Schedulo.ViewModels
         {
             MonthViewModel = new MonthViewModel();
             WeekViewModel = new WeekViewModel();
+            DayViewModel = new DayViewModel();
         }
 
         #region Protected Methods

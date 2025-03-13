@@ -11,10 +11,42 @@ namespace Schedulo.ViewModels
 {
     internal class WeekViewModel : ViewModelBase
     {
+        #region Fields
+
         /// <summary>
         /// List of day
         /// </summary>
         private ObservableCollection<DayViewModel> _days;
+
+        /// <summary>
+        /// List of Hour
+        /// </summary>
+        private ObservableCollection<DayViewModel> _hourBlocks;
+
+        /// <summary>
+        /// Time slots
+        /// </summary>
+        private ObservableCollection<DayViewModel> _timeSlots;
+
+
+        /// <summary>
+        /// Current Date
+        /// </summary>
+        private DateTime _currentDate;
+
+        /// <summary>
+        /// Scroll offset
+        /// </summary>
+        private double _scrollOffset;
+
+        /// <summary>
+        /// Local timezone
+        /// </summary>
+        private string _gmt;
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// List of day
@@ -40,11 +72,6 @@ namespace Schedulo.ViewModels
         /// <summary>
         /// List of Hour
         /// </summary>
-        private ObservableCollection<DayViewModel> _hourBlocks;
-
-        /// <summary>
-        /// List of Hour
-        /// </summary>
         public ObservableCollection<DayViewModel> HourBlocks
         {
             get
@@ -64,10 +91,8 @@ namespace Schedulo.ViewModels
         }
 
         /// <summary>
-        /// Time in Day
+        /// Time slots
         /// </summary>
-        private ObservableCollection<DayViewModel> _timeSlots;
-
         public ObservableCollection<DayViewModel> TimeSlots
         {
             get
@@ -89,11 +114,6 @@ namespace Schedulo.ViewModels
         /// <summary>
         /// Current Date
         /// </summary>
-        private DateTime _currentDate;
-
-        /// <summary>
-        /// Current Date
-        /// </summary>
         public DateTime CurrentDate
         {
             get => _currentDate;
@@ -105,7 +125,10 @@ namespace Schedulo.ViewModels
             }
         }
 
-        private double _scrollOffset;
+
+        /// <summary>
+        /// Scroll offset
+        /// </summary>
         public double ScrollOfset
         {
             get => _scrollOffset;
@@ -116,7 +139,9 @@ namespace Schedulo.ViewModels
             }
         }
 
-        private string _gmt;
+        /// <summary>
+        /// Local timezone
+        /// </summary>
         public string Gmt
         {
             get => _gmt;
@@ -127,7 +152,18 @@ namespace Schedulo.ViewModels
             }
         }
 
+        /// <summary>
+        /// Scroll command
+        /// </summary>
         public DelegateCommand ScrollCommand { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
 
         public WeekViewModel()
         {
@@ -141,6 +177,14 @@ namespace Schedulo.ViewModels
             Gmt = $"GMT{(offset.TotalHours >= 0 ? "+" : "")}{offset.TotalHours}";
         }
 
+        #endregion
+
+        #region Private methods
+
+        /// <summary>
+        /// On scroll event change
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnScrollChanged(object obj)
         {
             if (obj is ScrollChangedEventArgs args)
@@ -149,6 +193,9 @@ namespace Schedulo.ViewModels
             }
         }
 
+        /// <summary>
+        /// Load current day
+        /// </summary>
         private void LoadDays()
         {
             Days = new ObservableCollection<DayViewModel>();
@@ -165,6 +212,9 @@ namespace Schedulo.ViewModels
             }
         }
 
+        /// <summary>
+        /// Load time line
+        /// </summary>
         private void LoadHours()
         {
             HourBlocks.Clear();
@@ -178,6 +228,9 @@ namespace Schedulo.ViewModels
             }
         }
 
+        /// <summary>
+        /// Load time slot
+        /// </summary>
         private void LoadTimeSlots()
         {
             TimeSlots = new ObservableCollection<DayViewModel>();
@@ -190,5 +243,7 @@ namespace Schedulo.ViewModels
                 });
             }
         }
+
+        #endregion
     }
 }

@@ -46,6 +46,8 @@ namespace Schedulo.ViewModels
         public DateTime CurrentMonth { get; set; }
         #endregion
 
+        #region Constructors
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -55,6 +57,9 @@ namespace Schedulo.ViewModels
             LoadDays();
         }
 
+        #endregion
+
+        #region Private methods
         /// <summary>
         /// Load days to view
         /// </summary>
@@ -75,5 +80,7 @@ namespace Schedulo.ViewModels
                 });
             }
         }
+
+        #endregion
     }
 }

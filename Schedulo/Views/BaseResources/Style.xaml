@@ -126,7 +126,7 @@
     
     
     <!--Custom Text Display Day in Week View-->
-    <Style x:Key="TextDayInWeek" TargetType="TextBlock">
+    <Style x:Key="TextDay" TargetType="TextBlock">
         <Setter Property="FontSize" Value="16px"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="0 8"/>

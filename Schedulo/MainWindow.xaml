@@ -50,10 +50,14 @@
                     Grid.Row="1" 
                     DataContext="{Binding MonthViewModel}"/>-->
 
-                <views:DateWithWeekView
+                <!--<views:DateWithWeekView
                     Grid.Row="1"
-                    DataContext="{Binding WeekViewModel}"/>
-                
+                    DataContext="{Binding WeekViewModel}"/>-->
+
+                <views:DateView
+                    Grid.Row="1"
+                    DataContext="{Binding DayViewModel}"/>
+
             </Grid>
         </StackPanel>
     </Grid>
