@@ -1,4 +1,5 @@
 ﻿using Schedulo.Command;
+using Schedulo.Common;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,6 +33,11 @@ namespace Schedulo.ViewModels
         /// Local timezone
         /// </summary>
         private string _gmt;
+
+        /// <summary>
+        /// Scroll Height;
+        /// </summary>
+        private double _scrollHeight;
 
         #endregion
 
@@ -90,6 +96,19 @@ namespace Schedulo.ViewModels
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public double ScrollHeight
+        {
+            get => _scrollHeight;
+            set
+            {
+                _scrollHeight = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
         /// Events list
         /// </summary>
         public ObservableCollection<EventViewModel> Events { get; set; } = new ObservableCollection<EventViewModel>();
@@ -106,7 +125,7 @@ namespace Schedulo.ViewModels
         /// <summary>
         /// ScrollCommand
         /// </summary>
-        public DelegateCommand ScrollCommand;
+        public DelegateCommand ScrollCommand { get; }
         
         #endregion
 
@@ -123,6 +142,7 @@ namespace Schedulo.ViewModels
 
             TimeSpan offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
             Gmt = $"GMT{(offset.TotalHours >= 0 ? "+" : "")}{offset.TotalHours}";
+            _scrollHeight = AppConst.GRID_HEIGHT;
         }
 
         #endregion

@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Command\DelegateCommand.cs" />
+    <Compile Include="Common\AppConst.cs" />
     <Compile Include="Common\WindowManger.cs" />
     <Compile Include="Models\NativeMethod.cs" />
     <Compile Include="ViewModels\DayViewModel.cs" />

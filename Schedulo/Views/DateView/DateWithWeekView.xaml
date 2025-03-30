@@ -68,7 +68,7 @@
             <ScrollViewer 
                     Grid.Row="1"
                     VerticalScrollBarVisibility="Hidden" 
-                    Height="550">
+                    Height="{Binding ScrollHeight, Mode=OneWay}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="ScrollChanged">
                         <i:InvokeCommandAction Command="{Binding ScrollCommand}"/>

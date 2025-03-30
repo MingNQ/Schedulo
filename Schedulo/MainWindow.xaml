@@ -7,10 +7,17 @@
         xmlns:vm="clr-namespace:Schedulo.ViewModels"
         xmlns:resources="clr-namespace:Schedulo.Properties"
         xmlns:views="clr-namespace:Schedulo.Views.DateView"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Schedulo" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen">
-    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="SizeChanged">
+            <i:InvokeCommandAction Command="{Binding WindowSizeCommand}"
+                                   PassEventArgsToCommand="True"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -36,6 +43,10 @@
                             FontWeight="Bold"/>
                     </StackPanel>
                 </Button>
+
+                <Calendar 
+                    Margin="0 24 0 0"
+                    Style="{StaticResource CalendarStyle}"/>
             </StackPanel>    
         </Grid>
 
@@ -50,13 +61,13 @@
                     Grid.Row="1" 
                     DataContext="{Binding MonthViewModel}"/>-->
 
-                <!--<views:DateWithWeekView
+                <views:DateWithWeekView
                     Grid.Row="1"
-                    DataContext="{Binding WeekViewModel}"/>-->
+                    DataContext="{Binding WeekViewModel}"/>
 
-                <views:DateView
+                <!--<views:DateView
                     Grid.Row="1"
-                    DataContext="{Binding DayViewModel}"/>
+                    DataContext="{Binding DayViewModel}"/>-->
 
             </Grid>
         </StackPanel>

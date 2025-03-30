@@ -22,4 +22,7 @@
     <SolidColorBrush x:Key="ButtonLinkHoverForeground" Color="#282828"/>
     <SolidColorBrush x:Key="ButtonLinkPressBackground" Color="#A0A0A0"/>
     <SolidColorBrush x:Key="ButtonLinkPressForeground" Color="#383838"/>
+    
+    <!--Calendar-->
+    <SolidColorBrush x:Key="CalendarItemBackground" Color="#c2e7ff"/>
 </ResourceDictionary>

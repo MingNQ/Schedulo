@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Schedulo.Views.DateView"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="640" d:DesignWidth="1008">
     <Border 
             BorderBrush="{StaticResource GrayColor}" 
             BorderThickness="1px" 
@@ -38,7 +38,7 @@
                     Grid.Column="1" Grid.Row="0"
                     BorderBrush="{StaticResource GrayColor}" 
                     BorderThickness="1px" >
-                    <StackPanel>
+                    <StackPanel Margin="15 0 0 0">
                         <TextBlock 
                                 Text="{Binding Date, StringFormat='{}{0:ddd}'}"
                                 HorizontalAlignment="Left"/>
@@ -54,7 +54,7 @@
             <ScrollViewer 
                         Grid.Row="1" 
                         VerticalScrollBarVisibility="Hidden"
-                        Height="550">
+                        Height="{Binding ScrollHeight, Mode=OneWay}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="ScrollChanged">
                         <i:InvokeCommandAction Command="{Binding ScrollCommand}"/>
